@@ -30,6 +30,12 @@ function getResult (a, b, c) {
         case '/': 
         result = a / b;
         break;
+        case '**': 
+        result = a ** b;
+        break;
+        case '%': 
+        result = a % b;
+        break;
         default :
         result = 'Введите математический знак'
     }
