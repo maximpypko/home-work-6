@@ -3,41 +3,61 @@ var cylinder = {
     height : 10,
     volume : function() {
         var getVolume = Math.PI * (this.radius**2) * this.height;
-        console.log('Объём циллиндра равен ' + getVolume);
+        return ('Объём циллиндра равен ' + getVolume);
     },
     square : function() {
         var getSquare = 2 * Math.PI * this.radius * (this.height + this.radius);
-        console.log('Площадь циллиндра равна ' + getSquare);
+        return('Площадь циллиндра равна ' + getSquare);
     },
 }
-cylinder.volume();
-cylinder.square();
+console.log(cylinder.volume());
+console.log(cylinder.square());
 
 ///////////////////////////////////////////////
 
-function getResult(a, b, c) {
-    var result = a + c + b ;
-    return (eval(result));
+function getResult (a, b, c) {
+    var result;
+    switch(c) {
+        case '+': 
+        result = a + b;
+        break;
+        case '-': 
+        result = a - b;
+        break;
+        case '*': 
+        result = a * b;
+        break;
+        case '/': 
+        result = a / b;
+        break;
+        default :
+        result = 'Введите математический знак'
+    }
+    return result;
 }
-console.log(getResult(9, 3, '*'))
+console.log(getResult(10, 3, '*'))
 
 //////////////////////////////////////////////
 
 function isCharPresent(string, symbol) {
-    var result = string.toLowerCase().search(symbol.toLowerCase());
-    if (result >= 0) {
-        return true;
-    } else {
-        return false;  
+    for (var i = 0; i <= string.length; i++) {
+        if (string.charAt(i) == symbol) {
+            var result = true;
+            break;
+        } else {
+            result = false;
+        }
     }
+    return result;
 }
-console.log(isCharPresent('Hello JS', 'I'))
+console.log(isCharPresent('Hello JS', 'n'));
 
 //////////////////////////////////////////////
 
 function charIndexOf(string, symbol) {
-    var result = string.toLowerCase().search(symbol.toLowerCase());
+    var result = string.search(symbol);
     return result;  
 }
-console.log(charIndexOf('Hello JS', 'e'))
+console.log(charIndexOf('Hello JS', 'e'));
+
 
