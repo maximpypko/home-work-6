@@ -3,15 +3,16 @@ var cylinder = {
     height : 10,
     volume : function() {
         var getVolume = Math.PI * (this.radius**2) * this.height;
-        return ('Объём циллиндра равен ' + getVolume);
+        return (getVolume);
     },
     square : function() {
         var getSquare = 2 * Math.PI * this.radius * (this.height + this.radius);
-        return('Площадь циллиндра равна ' + getSquare);
+        return(getSquare);
+        
     },
 }
-console.log(cylinder.volume());
-console.log(cylinder.square());
+console.log('Объём циллиндра ' + cylinder.volume());
+console.log('Площадь циллиндра ' + cylinder.square());
 
 ///////////////////////////////////////////////
 
@@ -49,21 +50,28 @@ function isCharPresent(string, symbol) {
     for (var i = 0; i <= string.length; i++) {
         if (string.charAt(i) == symbol) {
             var result = true;
-            break;
+            return result;
         } else {
             result = false;
         }
     }
     return result;
 }
-console.log(isCharPresent('Hello JS', 'n'));
+console.log(isCharPresent('Hello JS', 'l'));
 
 //////////////////////////////////////////////
 
 function charIndexOf(string, symbol) {
-    var result = string.search(symbol);
+    for (var i = 0; i <= string.length; i++) {
+        if (string.charAt(i) == symbol) {
+            var result = true;
+            return result;
+        } else {
+            result = -1;
+        }
+    }
     return result;  
 }
-console.log(charIndexOf('Hello JS', 'e'));
+console.log(charIndexOf('Hello JS', 'p'));
 
 
